@@ -78,14 +78,9 @@
         for (let index = 0; index < filtered_char_2.length; index++) {
 
             if(input_1.indexOf(filtered_char_2[index]) != -1){
-                console.log("index",filtered_char_2[index]);
-                console.log('true');
                 count++;
             }
         }
-
-        console.log('coUNT ', count);
-        console.log("lENGHT ", input_1_length);
 
         var hasil = (count/input_1_length)*100;
         $('#hasil').val(hasil,' %');
