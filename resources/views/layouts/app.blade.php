@@ -83,7 +83,7 @@
         }
 
         var hasil = (count/input_1_length)*100;
-        $('#hasil').val(hasil,'%');
+        $('#hasil').val(hasil,' %');
     }
 
 </script>
