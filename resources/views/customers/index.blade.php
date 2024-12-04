@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="text-xl font-semibold leading-tight text-white-800">
             {{ __('Customers') }}
         </h2>
     </x-slot>
@@ -17,34 +17,34 @@
         @endif
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="overflow-hidden overflow-x-auto border-b border-gray-200 bg-white p-6">
+                <div class="overflow-hidden overflow-x-auto border-b border-white-200 bg-white p-6">
  
                     <a href="{{ route('customers.create') }}"
-                       class="mb-4 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25">
+                       class="mb-4 inline-flex items-center rounded-md border border-white-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white-700 shadow-sm transition duration-150 ease-in-out hover:bg-white-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25">
                         Create
                     </a>
  
                     <div class="min-w-full align-middle">
-                        <table class="min-w-full border divide-y divide-gray-200">
+                        <table class="min-w-full border divide-y divide-white-200">
                             <thead>
                             <tr>
-                                <th class="bg-gray-50 px-6 py-3 text-left">
-                                    <span class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">Name</span>
+                                <th class="bg-white-50 px-6 py-3 text-left">
+                                    <span class="text-xs font-medium uppercase leading-4 tracking-wider text-white-500">Name</span>
                                 </th>
-                                <th class="w-56 bg-gray-50 px-6 py-3 text-left">
+                                <th class="w-56 bg-white-50 px-6 py-3 text-left">
                                 </th>
                             </tr>
                             </thead>
  
-                            <tbody class="bg-white divide-y divide-gray-200 divide-solid">
+                            <tbody class="bg-white divide-y divide-white-200 divide-solid">
                                 @foreach($customers as $customer)
                                     <tr class="bg-white">
-                                        <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        <td class="px-6 py-4 text-sm leading-5 text-white-900 whitespace-no-wrap">
                                             {{ $customer->company->name }}
                                         </td>
-                                        <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
+                                        <td class="px-6 py-4 text-sm leading-5 text-white-900 whitespace-no-wrap">
                                             <a href="{{ route('customers.edit', $customer) }}"
-                                               class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25">
+                                               class="inline-flex items-center rounded-md border border-white-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white-700 shadow-sm transition duration-150 ease-in-out hover:bg-white-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25">
                                                 Edit
                                             </a>
                                             <form action="{{ route('customers.destroy', $customer) }}" method="POST" onsubmit="return confirm('Are you sure?')" style="display: inline-block;">

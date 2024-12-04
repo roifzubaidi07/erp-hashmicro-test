@@ -34,3 +34,61 @@
         </div>
     </body>
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+    function setTotal() {
+
+        var qty = parseInt($('#qty').val());
+        var price = parseInt($('#price').val());
+        var include_ppn = parseInt($('#include_ppn').val())
+        var subtotal = qty * price;
+
+        console.log(qty);
+
+        $('#subtotal').val(subtotal || 0);
+
+        if(include_ppn == 1){
+            $('#total').val(subtotal || 0);
+            $('#total_ppn').val(0);
+        }else{
+            var total_ppn = (11/100)*subtotal
+            $('#total_ppn').val(total_ppn || 0);
+            var total = subtotal + total_ppn;
+            $('#total').val(total || 0);
+        }
+    }
+    
+    function setPercent(){
+        var input_1 = $('#input_1').val();
+        var input_2 = $('#input_2').val();
+        var input_1_length = $('#input_1').val().length;
+        var array_return = [];
+        var filtered_array = [];
+        var filtered_array_keys = [];
+
+        var char_2 = jQuery.map((input_2 + '').split(''), function(n) {
+            return n
+        });
+
+        let filtered_char_2 = [...new Set(char_2.map(item => item))];
+
+        var count = 0;
+
+        for (let index = 0; index < filtered_char_2.length; index++) {
+
+            if(input_1.indexOf(filtered_char_2[index]) != -1){
+                console.log("index",filtered_char_2[index]);
+                console.log('true');
+                count++;
+            }
+        }
+
+        console.log('coUNT ', count);
+        console.log("lENGHT ", input_1_length);
+
+        var hasil = (count/input_1_length)*100;
+        $('#hasil').val(hasil,' %');
+}
+
+</script>
